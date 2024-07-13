@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIPTOGRAFIA</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CRIPTOGRAFIA</h1>
+        <div class="container-conteudo">
+            <div class="container-conteudo-criptografar">
+                <textarea class="text" id="texto-usuario"></textarea>
+                <div class="btns">   
+                    <input class="btn" type="button" value="CRIPTOGRAFAR" onclick="ExibirTexto()">
+                    <input class="btn" type="button" value="DESCRIPTOGRAFAR" onclick="Descriptografar()">
+                </div>
+            </div>
+            <div class="container-conteudo-resultado">
+                <div class="text"></div>
+                <p id="texto-resultado"></p>
+                <input class="btn" type="button" value="COPIAR" onclick="CopyText()">
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script/app.js"></script>
+</body>
+</html> 
