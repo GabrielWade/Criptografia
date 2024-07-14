@@ -1,3 +1,4 @@
+//----------------------------------------------------------------------------------------------
 function ExibirTexto() {
     var textoUsuario = document.getElementById("texto-usuario").value;
     var textoCriptografado = textoUsuario.replace(/e/g, "enter")
@@ -6,9 +7,23 @@ function ExibirTexto() {
                                          .replace(/o/g, "ober")
                                          .replace(/u/g, "ufat")
                                          .replace(/ /g, "cq");
-    document.getElementById("texto-resultado").innerHTML = textoCriptografado;
-}
+    var textoResultado = document.getElementById("texto-resultado");
+    var pageNotFound = document.getElementById("page-not-found");
+    var botaoCopiar = document.querySelector(".container-conteudo-resultado input.btn");
 
+    if (textoCriptografado.trim() === "") {
+        pageNotFound.style.display = "block";
+        document.getElementById("texto-resultado").value = "";
+        botaoCopiar.style.display = "none";
+    } else {
+        textoResultado.innerHTML = textoCriptografado;
+        pageNotFound.style.display = "none";
+        textoResultado.style.display = "block";
+        botaoCopiar.style.display = "inline-block"; 
+    }
+
+    document.getElementById("texto-usuario").value = "";
+}
 function Descriptografar() {
     var textoUsuario = document.getElementById("texto-usuario").value;
     var textoDescriptografado = textoUsuario.replace(/enter/g, "e")
@@ -17,10 +32,34 @@ function Descriptografar() {
                                          .replace(/ober/g, "o")
                                          .replace(/ufat/g, "u")
                                          .replace(/cq/g, " ");
-    document.getElementById("texto-resultado").innerHTML = textoDescriptografado;
+
+    var textoResultado = document.getElementById("texto-resultado");
+    var pageNotFound = document.getElementById("page-not-found");
+    var botaoCopiar = document.querySelector(".container-conteudo-resultado input.btn");
+
+    if (textoDescriptografado.trim() === "") {
+        pageNotFound.style.display = "block";
+        document.getElementById("texto-resultado").value = "";
+        botaoCopiar.style.display = "none";
+    } else {
+        textoResultado.innerHTML = textoDescriptografado;
+        pageNotFound.style.display = "none";
+        textoResultado.style.display = "block";
+        botaoCopiar.style.display = "inline-block";
+    }
+
+    document.getElementById("texto-usuario").value = "";
 }
 
+
 function CopyText() {
-    var texto = document.getElementById("texto-resultado").innerText;
-    navigator.clipboard.writeText(texto);
+    var texto = document.getElementById("texto-resultado").value;
+    navigator.clipboard.writeText(texto).then(function() {
+        alert('Texto copiado com sucesso!');
+    }).catch(function(err) {
+        alert('Erro ao copiar texto: ' + err);
+    });
 }
+
+
+//----------------------------------------------------------------------------------------------

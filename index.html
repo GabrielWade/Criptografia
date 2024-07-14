@@ -13,17 +13,27 @@
         <h1>CRIPTOGRAFIA</h1>
         <div class="container-conteudo">
             <div class="container-conteudo-criptografar">
-                <textarea class="text" id="texto-usuario"></textarea>
+                <textarea class="text" id="texto-usuario" placeholder="Digite seu texto"></textarea>
+                <div class="aviso">
+                    <img src="./assets/image/bi_exclamation-circle-fill.png" alt="">
+                    <p>Apenas letras minúsculas e sem acento.</p>
+                </div>
                 <div class="btns">   
-                    <input class="btn" type="button" value="CRIPTOGRAFAR" onclick="ExibirTexto()">
-                    <input class="btn" type="button" value="DESCRIPTOGRAFAR" onclick="Descriptografar()">
+                    <input class="btn btn-criptografar" type="button" value="CRIPTOGRAFAR" onclick="ExibirTexto()">
+                    <input class="btn btn-descriptografar" type="button" value="DESCRIPTOGRAFAR" onclick="Descriptografar()">
                 </div>
             </div>
             <div class="container-conteudo-resultado">
-                <div class="text"></div>
-                <p id="texto-resultado"></p>
-                <input class="btn" type="button" value="COPIAR" onclick="CopyText()">
-            </div>
+                <div class="texto-null" id="page-not-found">
+                    <img src="/assets/image/bussola.svg" alt="">
+                    <div>
+                        <h2>Nenhuma mensagem encontrada</h2>
+                        <p>Digite um texto que você deseja criptografar.</p>
+                    </div>
+                </div>
+                <textarea class="text" id="texto-resultado" readonly></textarea>
+                <input class="btn" type="button" value="COPIAR" onclick="CopyText()" style="display: none;">
+            </div>            
         </div>
     </div>
     <script src="./assets/script/app.js"></script>

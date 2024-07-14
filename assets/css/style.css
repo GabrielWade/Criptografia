@@ -23,8 +23,12 @@ body {
 
 /*--------------------- Estilizando input --------------------*/
 
+.container h1 {
+    color: var(--primary-color);
+}
+
 .container-conteudo-criptografar {
-    width: 80%;
+    width: 70%;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -33,40 +37,102 @@ body {
 }
 
 .container-conteudo-resultado {
-    width: 20%;
+    width: 30%;
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    
 }
 
 .container-conteudo .text {
     width: 100%;
     height: 100%;
+    font-family: var(--font-family-1);
+    font-size: 1.3rem;
+    resize: none;
+}
+
+.container-conteudo-criptografar .text {
+    background-color: var(--secundary-color);
+    color: var(--font-color-1);
 }
 
 .container-conteudo-resultado .text {
-    background-color: white;
+    background-color: var(--font-color-1);
+    border-radius: 7px;
+}
+
+
+.aviso {
+    display: flex;
+    gap: 10px;
+    margin-block-start: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.container-conteudo-criptografar .btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-conteudo-criptografar .btn {
-    width: 10rem;
+    width: 15rem;
     height: 3rem;
-    margin-top: 1rem;
+    margin: 1rem;
+    font-size: 1rem;
 }
 
-.container-conteudo-resultado p {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 1rem;
-    width: 7rem;
-    height: 2rem;
-    color: black;
+.container-conteudo .btn-criptografar {
+    border-radius: 1rem; 
+    padding: 1rem 2rem;  
+    font-size: 1rem;     
+    cursor: pointer;     
+    font-family: var(--font-family-1);
+    font-weight: bold;
+    color: var(--font-color-1);
+    background-color: var(--primary-color);
 }
+
+.container-conteudo .btn-descriptografar {
+    border-radius: 1rem; 
+    padding: 1rem 2rem;  
+    font-size: 1rem;     
+    cursor: pointer;     
+    font-family: var(--font-family-1);
+    font-weight: bold;
+    color: var(--font-color-3);
+    background-color: var(--secundary-color);
+    border: 2px solid var(--primary-color);
+}
+
+
+.texto-null {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: var(--font-color-2);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.texto-null div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-null img {
+    width: 13rem;
+}
+
 
 .container-conteudo-resultado .btn {
     position: absolute;
@@ -75,4 +141,59 @@ body {
     margin-bottom: 1rem;
     width: 7rem;
     height: 2rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: var(--font-family-1);
+    font-weight: bold;
+    color: var(--font-color-3);
+    background-color: var(--ternary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+/*---------------------------------------------------*/
+
+@media (max-width: 870px) {
+
+    .container-conteudo {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .container-conteudo-criptografar {
+        width: 100%;
+        height: 65vh;
+    }
+    
+    .container-conteudo-resultado {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .container-conteudo-criptografar .btn {
+        width: 11rem;
+        height: 3rem;
+    }
+    
+    .container-conteudo .btn-criptografar {
+        border-radius: 1rem; 
+        padding: 1rem 2rem;  
+        font-size: 0.7rem;
+    }
+    
+    .container-conteudo .btn-descriptografar {
+        border-radius: 1rem; 
+        padding: 1rem 2rem;  
+        font-size: 0.7rem;    
+    }
+
+    #page-not-found img {
+        display: none;
+    }
+}
+
+@media (max-width: 376px) {
+    .container-conteudo-criptografar .btns {
+        flex-direction: column;
+    }
 }

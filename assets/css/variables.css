@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #ff60ff;
+    --primary-color: #45a2be;
     --secundary-color:#1a1a1a;
-    --ternary--color:#8d3a8d;
+    --ternary--color:#ffffff;
     
     --scale-gray-1: #d2d2d2;
     --scale-gray-2:#505050;
@@ -10,6 +10,7 @@
 
     --font-color-1: #ffffff;
     --font-color-2: #000000;
+    --font-color-3: #45a2be;
     
     --font-family-1: "Fredoka", sans-serif;
     --font-family-2: "Dosis", sans-serif;
